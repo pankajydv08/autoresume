@@ -16,6 +16,7 @@ import {
 import { toaster } from './ui/toaster';
 import CodeEditor from './CodeEditor';
 import PdfViewer from './PdfView';
+import API_BASE_URL from '../services/api';
 
 const CoverLetterEditor = () => {
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ const CoverLetterEditor = () => {
 
     // SSE listener for cover letter updates
     useEffect(() => {
-        const eventSource = new EventSource('http://localhost:8000/api/events');
+        const eventSource = new EventSource(`${API_BASE_URL}/api/events`);
 
         eventSource.addEventListener('cover_letter_update', (event) => {
             try {
@@ -87,7 +88,7 @@ const CoverLetterEditor = () => {
         setGenerating(true);
 
         try {
-            const response = await fetch('http://localhost:8000/api/cover-letter/generate', {
+            const response = await fetch(`${API_BASE_URL}/api/cover-letter/generate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -120,7 +121,7 @@ const CoverLetterEditor = () => {
 
     const handleApplyChanges = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/cover-letter/update', {
+            const response = await fetch(`${API_BASE_URL}/api/cover-letter/update`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -154,7 +155,7 @@ const CoverLetterEditor = () => {
 
     const downloadCoverLetterPDF = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/serve_pdf?file_type=pdf&cover_letter=true&download=true');
+            const response = await fetch(`${API_BASE_URL}/api/serve_pdf?file_type=pdf&cover_letter=true&download=true`);
 
             if (!response.ok) {
                 throw new Error('Failed to download PDF');
@@ -181,7 +182,7 @@ const CoverLetterEditor = () => {
 
     const downloadCoverLetterTeX = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/serve_pdf?file_type=tex&cover_letter=true&download=true');
+            const response = await fetch(`${API_BASE_URL}/api/serve_pdf?file_type=tex&cover_letter=true&download=true`);
 
             if (!response.ok) {
                 throw new Error('Failed to download TeX');
@@ -331,7 +332,7 @@ const CoverLetterEditor = () => {
                                 <CodeEditor
                                     code={code}
                                     setCode={setCode}
-                                    endpoint="http://localhost:8000/api/serve_pdf?file_type=tex&cover_letter=true"
+                                    endpoint={`${API_BASE_URL}/api/serve_pdf?file_type=tex&cover_letter=true`}
                                 />
                             </Box>
 
@@ -347,7 +348,7 @@ const CoverLetterEditor = () => {
                             >
                                 <PdfViewer
                                     key={pdfRefreshKey}
-                                    endpoint={`http://localhost:8000/api/serve_pdf?file_type=pdf&cover_letter=true&t=${pdfRefreshKey}`}
+                                    endpoint={`${API_BASE_URL}/api/serve_pdf?file_type=pdf&cover_letter=true&t=${pdfRefreshKey}`}
                                 />
                             </Box>
                         </HStack>

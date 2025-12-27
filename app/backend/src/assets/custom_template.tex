@@ -1,0 +1,247 @@
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[10pt,a4paper]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.94]{geometry}
+\usepackage[dvipsnames]{xcolor}
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.4\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Small\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{3pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\huge{PANKAJ YADAV} \\
+\address{Software Engineer, Undergrad} \\[6.5pt]
+\footnotesize{
+\faMobile\href{tel:+918540871410}{\raisebox{-0.05\height} \ \underline{+91-8540871410}} \ $|$ \
+\faEnvelope\href{mailto:pankajyadsv08@gmail.com}{\raisebox{-0.05\height} \ \underline{pankajyadsv08@gmail.com}} \ $|$ \
+\faLinkedin\href{https://www.linkedin.com/in/pankaj-yadav-67b26a291/}{\raisebox{-0.05\height}\ \underline{linkedin.com/in/pankaj-yadav-67b26a291}} \ $|$ \
+\faGithub\href{https://github.com/pankajydv07/}{\raisebox{-0.05\height}\ \underline{github.com/pankajydv07}} \ $|$ \
+\faCode\href{https://leetcode.com/u/pankajydv08/}{\raisebox{-0.05\height}\ \underline{leetcode.com/u/pankajydv08}}}
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+%Experience
+\section{\textbf{Work Experience}}
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color{BlueViolet}\textbf{SmartBridge (Salesforce Partner)} & \hfill \textbf{June 2025 - August 2025} \\
+\textit{Salesforce Developer Intern (Virtual)}\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Delivered 6+ Apex classes and Lightning Web Components to automate workflows, reducing manual data entry time by ~40\% for simulated business scenarios.
+        \item Earned the Apex Specialist Superbadge by completing end-to-end tasks in process automation, security, and UI customization, demonstrating client-ready Salesforce expertise.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color{BlueViolet}\textbf{Edunet Foundation} & \hfill \textbf{May 2025 - July 2025} \\
+\textit{AI/ML Intern} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Analyzed customer behavior and modeled churn probability using a real-world telecom dataset, applying supervised learning and model evaluation (accuracy, ROC-AUC).
+        \item Applied data preprocessing and feature engineering using pandas, NumPy, and scikit-learn; visualized results with matplotlib.
+    \end{itemize}
+\end{minipage}
+}
+\end{tabularx}
+
+
+%Projects
+
+\section{\textbf{Projects}}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color{BlueViolet}\textbf{BeyondChats: PDF Learning Platform} $|$ \textit{React, Node.js, Supabase, OpenAI, Tailwind} & \hfill \href{https://beyondchats-revision-app.vercel.app}{\textbf{Live Demo}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}
+{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Built a platform that lets users upload PDFs, query content using context-aware AI chat, and generate quizzes automatically using a vector-based RAG pipeline.
+        \item Integrated PDF parsing, embedding generation, semantic chunking, and REST APIs for AI interactions and result tracking.
+        \item Used Supabase for database and auth, OpenAI for model responses, and Tailwind for responsive UI.
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\vspace{5pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color{BlueViolet}\textbf{AI Customer Intent Brain} $|$ \textit{FastAPI, Supabase pgvector, OpenAI, BERT, Next.js} & \hfill \href{https://github.com/pankajydv07/AI-Customer-Intent-Brain}{\textbf{Code Link}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}
+{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed a support system that classifies user queries and automates responses using a hybrid pipeline of a fine-tuned BERT model and a vector store-backed LLM agent.
+        \item Implemented LLM tool-calling to simulate actions like refunds and flagging transactions based on intent prediction.
+        \item Built REST endpoints with FastAPI, vector search with pgvector, and dashboard UI with Next.js.
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\vspace{5pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color{BlueViolet}\textbf{AI Tutor: Visual Learning Platform} $|$ \textit{React, FastAPI, Qwen-3, Manim, MongoDB} & \hfill \href{https://github.com/pankajydv07/AI_Tutor}{\textbf{Code Link}} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}
+{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Built a system that takes a student query and generates a narrated video with math visuals using step-wise reasoning from Qwen and animation rendered with Manim.
+        \item Connected multilingual TTS with generated LaTeX and voice output, delivering answers in multiple languages.
+        \item Structured the app with a React frontend, FastAPI backend, and modular orchestration layer for LLM and rendering tools.
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{\textbf{Technical Skills}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\color{BlueViolet}\textbf{Languages \& Libraries} & Python, C++, JavaScript, SQL, ReactJS, NumPy, pandas, scikit-learn, matplotlib \\
+\color{BlueViolet}\textbf{ML \& LLMs} & Model evaluation, embeddings, intent classification, transformers, BERT, RAG pipelines \\
+\color{BlueViolet}\textbf{Backend \& APIs} & FastAPI, REST APIs, Supabase, PostgreSQL, MongoDB \\
+\color{BlueViolet}\textbf{DevOps \& Tools} & Git, GitHub, Docker, Postman, Jupyter Notebook, Vercel
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{\textbf{Education}}
+
+\begin{tabularx}{\linewidth}{l@{\extracolsep{\fill}}r@{}}
+\color{BlueViolet}\textbf{SRM University, Andhra Pradesh} & \normalsize\textbf{Aug 2023 – Present} \\[1.75pt]
+\textit{B.Tech in Computer Science Engineering} & \normalsize\textbf{GPA: 8.88/10.0} \\
+
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	Leadership / Extracurricular
+%----------------------------------------------------------------------------------------
+\section{\textbf{Leadership / Achievements}}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=5pt]
+\item \textbf{Open Source Contributor, Hacktoberfest 2025} \\
+Contributed 6+ accepted pull requests to global open-source projects; earned the \textbf{Super Contributor Badge} by Holopin and a sustainability recognition from \textbf{DigitalOcean}.
+
+
+\item  \textbf{Top Finalist, Code Spark – KBN College - 2025} \\
+Selected among the Top Finalists at the national-level Code Spark hackathon (370+ teams) and awarded a cash prize.
+
+\item \textbf{Winner, Code4Change Hackathon 2025} at KL University for project \href{https://github.com/pankajydv07/agri-connect}{Agri-Connect}.
+
+\item \textbf{Winner, Secure X BSI Hackathon 2024} for designing a spam detection model with 95\% phishing accuracy.
+
+\item \textbf{Top 10 Finalist, Internal Smart India Hackathon (SIH) 2024} for developing a Smart Hospital Management System.
+\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	Certifications
+%----------------------------------------------------------------------------------------
+\section{\textbf{Certifications}}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=5pt]
+
+
+ \item \href{https://scrimba.com/certificate-cert2JbLs3qgAvv59vEP12kh4MbXKkrKk835tjuMc6}{\textbf{AI Engineering Career Path}} – \textit{Scrimba}
+
+  \item \href{https://coursera.org/verify/MMLTPTYNPP4Z0}{\textbf{Supervised Machine Learning: Regression and Classification}} – \textit{Stanford University \& DeepLearning.AI (Coursera)}
+\end{itemize}
+
+
+
+\vfill
+% \center{\footnotesize Last updated: \today}
+
+\end{document}

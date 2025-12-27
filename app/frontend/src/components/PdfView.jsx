@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { Box, Spinner, Text } from '@chakra-ui/react';
+import API_BASE_URL from '../services/api';
 
 
 // Initialize worker once when the module loads
@@ -9,7 +10,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
-function PdfViewer({ endpoint = 'http://localhost:8000/api/serve_pdf?file_type=pdf' }) {
+function PdfViewer({ endpoint = `${API_BASE_URL}/api/serve_pdf?file_type=pdf` }) {
   const [pdfData, setPdfData] = useState(null);
   const [numPages, setNumPages] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -60,7 +61,7 @@ function PdfViewer({ endpoint = 'http://localhost:8000/api/serve_pdf?file_type=p
     hasFetchedRef.current = false;
 
     // Initialize SSE connection
-    const eventSource = new EventSource('http://localhost:8000/api/events');
+    const eventSource = new EventSource(`${API_BASE_URL}/api/events`);
 
     eventSource.onmessage = (event) => {
       if (!isMounted.current) return;

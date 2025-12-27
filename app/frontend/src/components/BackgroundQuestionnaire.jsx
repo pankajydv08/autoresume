@@ -4,6 +4,7 @@ import { Field } from './ui/field';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toaster } from './ui/toaster';
+import API_BASE_URL from '../services/api';
 import {
     SelectContent,
     SelectItem,
@@ -113,7 +114,7 @@ export default function BackgroundQuestionnaire() {
     const handleSubmit = async () => {
         setIsSubmitting(true);
         try {
-            const response = await fetch('http://localhost:8000/api/background-questionnaire', {
+            const response = await fetch(`${API_BASE_URL}/api/background-questionnaire`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

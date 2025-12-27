@@ -1,0 +1,136 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape First Last} \\ \vspace{1pt}
+    \small 123-456-7890 $|$ \href{mailto:email@address.com}{\underline{email@address.com}} $|$ 
+    \href{https://linkedin.com/in/username}{\underline{linkedin.com/in/username}} $|$
+    \href{https://github.com/username}{\underline{github.com/username}}
+\end{center}
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University Name}{City, State}
+      {Bachelor of Science in Computer Science}{Month Year -- Month Year}
+  \resumeSubHeadingListEnd
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Company Name}{City, State}
+      {Software Engineer}{Month Year -- Present}
+      \resumeItemListStart
+        \resumeItem{Developed and maintained scalable web applications using React and Node.js, improving system performance by 25\%.}
+        \resumeItem{Designed and implemented a RESTful API that handled over 10,000 concurrent requests per minute with 99.9\% uptime.}
+        \resumeItem{Collaborated with cross-functional teams to integrate AWS cloud services, reducing infrastructure costs by 15\%.}
+        \resumeItem{Automated CI/CD pipelines using Jenkins and Docker, decreasing deployment time from 1 hour to 10 minutes.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Company Name}{City, State}
+      {Junior Developer}{Month Year -- Month Year}
+      \resumeItemListStart
+        \resumeItem{Optimized SQL database queries, resulting in a 40\% reduction in average page load times for the client dashboard.}
+        \resumeItem{Refactored legacy codebase to modern standards, increasing code coverage from 60\% to 85\% via unit and integration tests.}
+        \resumeItem{Resolved over 150 critical bugs reported in the production environment within a 6-month period.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Project Name} $|$ \emph{Python, Flask, PostgreSQL, React}}{Month Year}
+          \resumeItemListStart
+            \resumeItem{Built a full-stack e-commerce platform featuring secure user authentication and Stripe payment integration.}
+            \resumeItem{Implemented a real-time inventory tracking system using WebSockets to synchronize data across multiple users.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Portfolio Website} $|$ \emph{HTML/CSS, JavaScript, GitHub Actions}}{Month Year}
+          \resumeItemListStart
+            \resumeItem{Designed a responsive personal portfolio site to showcase projects, achieving an 80+ accessibility score on Lighthouse.}
+            \resumeItem{Configured automated deployment workflows using GitHub Actions for seamless updates.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, C/C++, SQL, JavaScript, HTML/CSS} \\
+     \textbf{Frameworks}{: React, Node.js, Flask, Spring Boot, JUnit, Material-UI} \\
+     \textbf{Developer Tools}{: Git, Docker, AWS, Jenkins, Postman, Kubernetes} \\
+     \textbf{Libraries}{: NumPy, Pandas, Scikit-Learn, Redux}
+    }}
+ \end{itemize}
+
+\end{document}

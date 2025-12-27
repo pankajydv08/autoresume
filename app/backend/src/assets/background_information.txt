@@ -1,0 +1,56 @@
+============================================================
+BACKGROUND INFORMATION QUESTIONNAIRE
+============================================================
+
+1. EQUAL EMPLOYMENT OPPORTUNITY (EEO)
+------------------------------------------------------------
+Gender: Not specified
+Race/Ethnicity: Not specified
+Protected Veteran: Not specified
+Disability: Not specified
+
+2. WORK AUTHORIZATION
+------------------------------------------------------------
+Legally Authorized: Not specified
+Sponsorship Required: Not specified
+Current Visa: None
+
+3. BACKGROUND CHECK CONSENT
+------------------------------------------------------------
+Willing to Undergo: Not specified
+Felony Conviction: Not specified
+Pending Charges: Not specified
+
+4. EXPORT CONTROL / SECURITY
+------------------------------------------------------------
+Citizen/Resident: Not specified
+Export Control Restrictions: Not specified
+U.S. Person (ITAR/EAR): Not specified
+
+5. CONFLICT OF INTEREST
+------------------------------------------------------------
+Relatives at Company: Not specified
+Competitor Work: Not specified
+Financial Conflicts: Not specified
+
+6. DATA PRIVACY CONSENT
+------------------------------------------------------------
+Data Processing Consent: Not specified
+Policy Agreement: Not specified
+
+7. EMPLOYMENT ELIGIBILITY / AGE
+------------------------------------------------------------
+Over 18: Not specified
+Can Provide Documentation: Not specified
+
+8. COMPENSATION DISCLOSURE
+------------------------------------------------------------
+Salary Expectations: Not specified
+Overtime Eligible: Not specified
+
+9. LOCATION / REMOTE WORK
+------------------------------------------------------------
+Work from Selected Location: Not specified
+Willing to Relocate: Not specified
+
+============================================================

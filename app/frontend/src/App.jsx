@@ -6,6 +6,7 @@ import PdfViewer from './components/PdfView';
 import { useState, useEffect } from 'react';
 import { toaster, Toaster } from './components/ui/toaster';
 import CodeEditor from './components/CodeEditor';
+import API_BASE_URL from './services/api';
 
 function App() {
   const [aiSuggestion, setAiSuggestion] = useState('');
@@ -56,7 +57,7 @@ function App() {
     setIsGenerating(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/update-resume', {
+      const response = await fetch(`${API_BASE_URL}/api/update-resume`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +98,7 @@ function App() {
 
   const handleDownloadPDF = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/serve_pdf?file_type=pdf', {
+      const response = await fetch(`${API_BASE_URL}/api/serve_pdf?file_type=pdf`, {
         method: 'GET',
       });
 
@@ -127,7 +128,7 @@ function App() {
 
   const handleDownloadTeX = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/serve_pdf?file_type=tex&download=true', {
+      const response = await fetch(`${API_BASE_URL}/api/serve_pdf?file_type=tex&download=true`, {
         method: 'GET',
       });
 

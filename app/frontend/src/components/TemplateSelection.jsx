@@ -3,6 +3,7 @@ import { Box, SimpleGrid, Text, VStack, Button, Heading, Card, Image, Flex, Spac
 import { useNavigate } from 'react-router-dom';
 import { templates } from '../data/templates';
 import { toaster } from './ui/toaster';
+import API_BASE_URL from '../services/api';
 
 const TemplateSelection = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const TemplateSelection = () => {
     useEffect(() => {
         const checkQuestionnaireStatus = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/background-questionnaire/status');
+                const response = await fetch(`${API_BASE_URL}/api/background-questionnaire/status`);
                 if (response.ok) {
                     const data = await response.json();
                     if (!data.completed) {
@@ -35,7 +36,7 @@ const TemplateSelection = () => {
     const handleSelectTemplate = async (template) => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:8000/api/update-resume', {
+            const response = await fetch(`${API_BASE_URL}/api/update-resume`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

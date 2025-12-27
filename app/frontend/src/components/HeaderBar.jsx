@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaCog, FaTrash } from 'react-icons/fa';
 import { toaster } from './ui/toaster';
 import LoginPopup from './LoginPopup';
+import API_BASE_URL from '../services/api';
 
 export default function HeaderBar({ onBack, isPdfMode }) {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function HeaderBar({ onBack, isPdfMode }) {
 
   const handleDeleteClick = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/clear-resume', {
+      const response = await fetch(`${API_BASE_URL}/api/clear-resume`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

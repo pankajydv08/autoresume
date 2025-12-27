@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { toaster } from './ui/toaster';
 import { useNavigate } from 'react-router-dom';
+import API_BASE_URL from '../services/api';
 
 const JobSearch = () => {
     const navigate = useNavigate();
@@ -53,7 +54,7 @@ const JobSearch = () => {
 
     const fetchSkills = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/jobs/skills');
+            const response = await fetch(`${API_BASE_URL}/api/jobs/skills`);
 
             if (!response.ok) {
                 throw new Error('Failed to fetch skills');
@@ -84,7 +85,7 @@ const JobSearch = () => {
 
         try {
             // Start the search task
-            const startResponse = await fetch('http://localhost:8000/api/jobs/search', {
+            const startResponse = await fetch(`${API_BASE_URL}/api/jobs/search`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -118,7 +119,7 @@ const JobSearch = () => {
 
     // Listen for SSE updates
     useEffect(() => {
-        const eventSource = new EventSource('http://localhost:8000/api/events');
+        const eventSource = new EventSource(`${API_BASE_URL}/api/events`);
 
         eventSource.addEventListener('job_update', (event) => {
             try {

@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Box, Spinner, Text } from "@chakra-ui/react";
 import Editor from "@monaco-editor/react";
+import API_BASE_URL from '../services/api';
 
 
-function LaTeXEditor({ code, setCode, endpoint = 'http://localhost:8000/api/serve_pdf?file_type=tex' }) {
+function LaTeXEditor({ code, setCode, endpoint = `${API_BASE_URL}/api/serve_pdf?file_type=tex` }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [isEditorReady, setIsEditorReady] = useState(false);
@@ -38,7 +39,7 @@ function LaTeXEditor({ code, setCode, endpoint = 'http://localhost:8000/api/serv
     hasFetchedRef.current = false;
 
     // Initialize SSE connection
-    const eventSource = new EventSource('http://localhost:8000/api/events');
+    const eventSource = new EventSource(`${API_BASE_URL}/api/events`);
 
     eventSource.onmessage = (event) => {
       if (!isMounted.current) return;
